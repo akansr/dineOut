@@ -3,24 +3,24 @@
 echo $PWD
 cd ./dineOutDB
 npm install
-exec -a dineoutdb npm start & \n
+npm start &
 cd ..
 
 cd ./dineOutRecommender
 echo $PWD
 npm install
-NODE_ENV=dev NODE_CONFIG_DIR=src/config API_KEY=$1 ./node_modules/.bin/ts-node ./src/app.ts & \n
+NODE_ENV=dev NODE_CONFIG_DIR=src/config API_KEY=$1 ./node_modules/.bin/ts-node ./src/app.ts &
 cd ..
 
 cd ./dineOutApi
 echo $PWD
-npm install 
+npm install
 npm start &
 cd ..
 
 cd ./dineOutAnalyzer
 echo $PWD
-npm install 
+npm install
 npm start &
 cd ..
 
