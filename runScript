@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+echo $PWD
+cd ./dineOutDB
+npm install
+exec -a dineoutdb npm start & \n
+cd ..
+
+cd ./dineOutRecommender
+echo $PWD
+npm install
+NODE_ENV=dev NODE_CONFIG_DIR=src/config API_KEY=$1 ./node_modules/.bin/ts-node ./src/app.ts & \n
+cd ..
+
+cd ./dineOutApi
+echo $PWD
+npm install 
+npm start &
+cd ..
+
+cd ./dineOutAnalyzer
+echo $PWD
+npm install 
+npm start &
+cd ..
+
+cd ./dineOutUI
+echo $PWD
+npm install
+npm start &
