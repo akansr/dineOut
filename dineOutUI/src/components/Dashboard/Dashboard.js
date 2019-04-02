@@ -33,22 +33,22 @@ export default {
 
     handleVisit (name) {
       console.log(name)
-      this.$http.post(`http://docker.for.mac.localhost:4000/users/${localStorage.getItem("username")}/restaurants/${name}/visit`)
+      this.$http.post(`http://localhost:4000/users/${localStorage.getItem("username")}/restaurants/${name}/visit`)
     },
 
     handleLike (place_id) {
-      this.$http.post(`http://docker.for.mac.localhost:4000/users/${localStorage.getItem("username")}/restaurants/${place_id}/like`)
+      this.$http.post(`http://localhost:4000/users/${localStorage.getItem("username")}/restaurants/${place_id}/like`)
         .then( () => {
           console.log(place_id);
-          this.$http.post(`http://docker.for.mac.localhost:4000/restaurants/${place_id}/like`)});
+          this.$http.post(`http://localhost:4000/restaurants/${place_id}/like`)});
 
     },
 
     handleDislike (place_id) {
-      this.$http.post(`http://docker.for.mac.localhost:4000/users/${localStorage.getItem("username")}/restaurants/${place_id}/dislike`)
+      this.$http.post(`http://localhost:4000/users/${localStorage.getItem("username")}/restaurants/${place_id}/dislike`)
         .then( () => {
           console.log(place_id);
-          this.$http.post(`http://docker.for.mac.localhost:4000/restaurants/${place_id}/dislike`)});
+          this.$http.post(`http://localhost:4000/restaurants/${place_id}/dislike`)});
     }
   },
   beforeMount () {

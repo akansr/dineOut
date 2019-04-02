@@ -13,7 +13,7 @@ export default {
     handleLogin (event) {
       event.preventDefault()
       if (this.input.password.length > 0) {
-        this.$http.post('http://docker.for.mac.localhost:4000/login', {
+        this.$http.post('http://localhost:4000/login', {
           username: this.input.username,
           password: this.input.password
         })
